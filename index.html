@@ -15,19 +15,33 @@
 
     <a-scene>
         <a-assets antialias="true">
-            <video id="bigTechVid" autoplay loop="true" src="./public/media/video/2d/3.mp4"></video>
+            <img id="pano10" src="./public/media/image/360/10.jpg" alt="">
+
+            <img id="play" src="./public/media/image/play.png" alt="">
+            <img id="pause" src="./public/media/image/pause.png" alt="">
+            <video id="bigTechVid" loop="true" src="./public/media/video/2d/3.mp4"></video>
         </a-assets>
 
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
 
-        <a-entity id="tvScreen" position="0 0 -10">
-            <a-video src="#bigTechVid" width="16" height="9" position="0 0 0"></a-video>
-            
+
+        <a-image play-pause id="videoControls" src="#play" position="0 -0.5 -4" scale="1 1 1" material="alphaTest: 0.5;"></a-image>
+        
+        
+        
+    </a-video>
+    
+    <a-entity id="tvScreen" position="0 0 -8">
+        
+            <a-video src="#bigTechVid" width="16" height="9" position="0 3 0">
             <a-cylinder position="-8 0 0" radius="0.5" height="10" color="#111"></a-cylinder>
             <a-cylinder position="8 0 0" radius="0.5" height="10" color="#111"></a-cylinder>
         </a-entity>
         <a-video src="#bigTechVid" width="16" height="9" position="0 8 0" material="opacity: 0.25" rotation="90 0 0"></a-video>
-        <a-plane position="0 -5 0" rotation="-90 0 0" width="40" height="40" color="#111"></a-plane>
-        <a-sky color="#000"></a-sky>
+        <!-- <a-plane position="0 -5 0" rotation="-90 0 0" width="40" height="40" color="#111"></a-plane> -->
+        <a-sky src="#pano10"></a-sky>
     </a-scene>
 
 
